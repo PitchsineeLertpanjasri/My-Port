@@ -20,20 +20,15 @@ export default function Banner() {
   // }, [images.length]);
 
   return (
-    <div className="bg-gradient-to-r from-[#F56EE3] to-[#4082B8] text-white text-center py-20 w-full h-[100vh] overflow-hidden relative">
+    <div className="bg-gradient-to-r from-[#F56EE3] to-[#4082B8] text-white text-center py-20 w-full h-[500px] overflow-hidden relative">
 
-        <div 
-            className="absolute top-[5%] left-1/2 transform -translate-x-1/2 text-white text-[150px] z-30 font-serif font-bold tracking-wide"
-            style={{
-                textShadow: "0px 5px 0px rgba(0, 0, 0, 0.7)", // Drop shadow
-                WebkitTextStroke: "1px #88383", // Stroke (outline)
-            }}
-        >
-        <span className="text-[80px] sm:text-[90px] md:text-[100px] lg:text-[128px] xl:text-[150px] 2xl:text-[180px]">
-            My Port
-            <p className="text-[24px] sm:text-[27px] md:text-[30px] lg:text-[38px] xl:text-[45px] 2xl:text-[54px]">Pitchsinee Lertpanjasri</p>
-        </span>
-        
+        <div className="text-center">
+        <h1 className="text-[80px] sm:text-[90px] md:text-[100px] lg:text-[128px] xl:text-[150px] 2xl:text-[180px] font-serif font-bold drop-shadow-lg">
+          My Port
+        </h1>
+        <p className="text-[24px] sm:text-[27px] md:text-[30px] lg:text-[38px] xl:text-[45px] 2xl:text-[54px] drop-shadow-md">
+          Pitchsinee Lertpanjasri
+        </p>
       </div>
 
       
