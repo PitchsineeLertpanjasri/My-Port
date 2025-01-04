@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const Projects = () => { 
 
   const projects = [
@@ -29,7 +31,8 @@ const Projects = () => {
             </ul>
           </div> */}
           {projects.map((project, index) => (
-              <div className="p-4 bg-white rounded shadow hover:shadow-lg">
+            <Link href={`/projects/${project.name}`} key={index}>
+              <div className="p-4 bg-white rounded shadow hover:shadow-lg ">
                 <h3 className="text-xl font-semibold">{project.name}</h3>
                   <ul className="list-none space-y-2 pt-2">about
                     <li></li>
@@ -38,6 +41,7 @@ const Projects = () => {
                     ))}
                   </ul>
               </div>
+            </Link>
           ))}
         </div>
       </section>
