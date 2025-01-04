@@ -27,9 +27,9 @@
         <h2 className="text-2xl font-bold text-gray-800 mb-4">Projects</h2>
         <p className="text-gray-600 mb-4">Explore some of my recent work and projects.</p>
         <ul className="space-y-4">
-          <li className="bg-gray-50 p-4 rounded shadow-md">Project A - An innovative app for managing tasks.</li>
-          <li className="bg-gray-50 p-4 rounded shadow-md">Project B - A website built to showcase designs.</li>
-          <li className="bg-gray-50 p-4 rounded shadow-md">Project C - A full-stack e-commerce application.</li>
+          <li className="bg-gray-50 p-4 rounded shadow-md">StepOutSite - Web Dev, golang, React & Nextjs</li>
+          <li className="bg-gray-50 p-4 rounded shadow-md">Smart Fish Tank - embedded system, arduino, cloud, firebase, blynk</li>
+          <li className="bg-gray-50 p-4 rounded shadow-md">Data Science - Data cleansing, AI/ML, Data engineering, Data visualization</li>
         </ul>
       </div>
     );
