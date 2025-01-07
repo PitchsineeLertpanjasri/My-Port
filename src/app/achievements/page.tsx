@@ -11,32 +11,31 @@ export default function AchievementsPage() {
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [startPosition, setStartPosition] = useState({ x: 0, y: 0 });
 
-  // const handleZoomIn = () => {
-  //   setScale((prevScale) => Math.min(prevScale + 0.2, 3)); // Maximum scale of 3x
-  // };
-
-  // const handleZoomOut = () => {
-  //   setScale((prevScale) => Math.max(prevScale - 0.2, 1)); // Minimum scale of 1x
-  // };
-
-  const handleMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
+  const handleStart = (e: React.MouseEvent<HTMLDivElement> | React.TouchEvent<HTMLDivElement>) => {
     setIsDragging(true);
+
+    const clientX = "touches" in e ? e.touches[0].clientX : e.clientX;
+    const clientY = "touches" in e ? e.touches[0].clientY : e.clientY;
+
     setStartPosition({
-      x: e.clientX - position.x,
-      y: e.clientY - position.y,
+      x: clientX - position.x,
+      y: clientY - position.y,
     });
   };
 
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+  const handleMove = (e: React.MouseEvent<HTMLDivElement> | React.TouchEvent<HTMLDivElement>) => {
     if (!isDragging) return;
 
+    const clientX = "touches" in e ? e.touches[0].clientX : e.clientX;
+    const clientY = "touches" in e ? e.touches[0].clientY : e.clientY;
+
     setPosition({
-      x: e.clientX - startPosition.x,
-      y: e.clientY - startPosition.y,
+      x: clientX - startPosition.x,
+      y: clientY - startPosition.y,
     });
   };
 
-  const handleMouseUp = () => {
+  const handleEnd = () => {
     setIsDragging(false);
   };
 
@@ -73,10 +72,13 @@ export default function AchievementsPage() {
                 transformOrigin: "center",
                 cursor: isDragging ? "grabbing" : "grab",
               }}
-              onMouseDown={handleMouseDown}
-              onMouseMove={handleMouseMove}
-              onMouseUp={handleMouseUp}
-              onMouseLeave={handleMouseUp} // Ensure drag stops if the mouse leaves the image
+              onMouseDown={handleStart}
+              onMouseMove={handleMove}
+              onMouseUp={handleEnd}
+              onMouseLeave={handleEnd} // Ensure drag stops if the mouse leaves the image
+              onTouchStart={handleStart}
+              onTouchMove={handleMove}
+              onTouchEnd={handleEnd}
             >
               <img
                 src="/images/zertificate b1.jpg"
@@ -87,18 +89,6 @@ export default function AchievementsPage() {
             </div>
           </div>
           <div className="absolute top-4 right-4 flex space-x-2">
-            {/* <button
-              onClick={handleZoomIn}
-              className="bg-white text-black px-4 py-2 rounded shadow"
-            >
-              Zoom In
-            </button>
-            <button
-              onClick={handleZoomOut}
-              className="bg-white text-black px-4 py-2 rounded shadow"
-            >
-              Zoom Out
-            </button> */}
             <button
               onClick={() => setIsOpen(false)}
               className="bg-red-500 text-white px-4 py-2 rounded shadow"
