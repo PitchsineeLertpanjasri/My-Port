@@ -34,7 +34,7 @@ const Projects = () => {
             <Link href={`/projects/${project.name}`} key={index}>
               <div className="p-4 bg-white rounded shadow hover:shadow-lg ">
                 <h3 className="text-xl font-semibold">{project.name}</h3>
-                  <ul className="list-none space-y-2 pt-2">about
+                  <ul key={index} className="list-none space-y-2 pt-2">about
                     <li></li>
                     {project.about.map((item, index) => (
                       <li className="before:content-['•'] before:mr-2  pl-6 ">{item}</li>
